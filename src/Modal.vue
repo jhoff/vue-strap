@@ -5,7 +5,7 @@
     'zoom':effect === 'zoom'
     }"
     >
-    <div v-bind:class="{'modal-dialog':true,'modal-lg':large,'modal-sm':small}" role="document"
+    <div v-bind:class="{modalDialog:true,modalLg:large,modalSm:small}" role="document"
       v-bind:style="{width: optionalWidth}">
       <div class="modal-content">
         <slot name="modal-header">
@@ -61,11 +61,11 @@ import EventListener from './utils/EventListener.js'
       },
       large: {
         type: Boolean,
-        default: true
+        default: false
       },
       small: {
         type: Boolean,
-        default: true
+        default: false
       }
     },
     watch: {
