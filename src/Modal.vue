@@ -44,7 +44,7 @@ import EventListener from './utils/EventListener.js'
         twoWay: true
       },
       width: {
-        type: Number,
+        type: String,
         default: null
       },
       callback: {
@@ -99,10 +99,12 @@ import EventListener from './utils/EventListener.js'
     },
     computed: {
       optionalWidth: function() {
-        if(this.width !== null) {
+        if( this.width === null ) {
+          return null;
+        } else if( Number.isInteger(this.width) ) {
           return this.width + "px";
         }
-        return null;
+        return this.width;
       },
     },
     methods: {
