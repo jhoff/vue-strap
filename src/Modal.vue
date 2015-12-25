@@ -6,7 +6,7 @@
     }"
     >
     <div class="modal-dialog" role="document"
-      v-bind:style="{'width': width + 'px'}">
+      v-bind:style="{width: optionalWidth}">
       <div class="modal-content">
         <slot name="modal-header">
           <div class="modal-header">
@@ -45,7 +45,7 @@ import EventListener from './utils/EventListener.js'
       },
       width: {
         type: Number,
-        default: 600
+        default: null
       },
       callback: {
         type: Function,
@@ -88,6 +88,14 @@ import EventListener from './utils/EventListener.js'
           }, 300)
         }
       }
+    },
+    computed: {
+      optionalWidth: function() {
+        if(this.width !== null) {
+          return this.width + "px";
+        }
+        return null;
+      },
     },
     methods: {
       close() {
