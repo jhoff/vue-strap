@@ -1,6 +1,7 @@
 <template>
-  <div class="modal fade" role="dialog"
+  <div role="dialog"
     v-bind:class="{
+    'modal':true,
     'fade':effect === 'fade',
     'zoom':effect === 'zoom'
     }"
@@ -44,7 +45,6 @@ import EventListener from './utils/EventListener.js'
         twoWay: true
       },
       width: {
-        type: String,
         default: null
       },
       callback: {
@@ -53,7 +53,7 @@ import EventListener from './utils/EventListener.js'
       },
       effect: {
         type: String,
-        default: 'fade'
+        default: null
       },
       backdrop: {
         type: Boolean,
