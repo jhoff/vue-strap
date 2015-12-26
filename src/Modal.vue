@@ -5,7 +5,7 @@
     'zoom':effect === 'zoom'
     }"
     >
-    <div v-bind:class="{modal-dialog:true,modal-lg:large,modal-sm:small}" role="document"
+    <div v-bind:class="{'modal-dialog':true,'modal-lg':large,'modal-sm':small}" role="document"
       v-bind:style="{width: optionalWidth}">
       <div class="modal-content">
         <slot name="modal-header">
